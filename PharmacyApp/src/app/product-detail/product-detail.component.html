@@ -1,0 +1,33 @@
+<div *ngFor="let product of productDetail"> 
+  
+  <div *ngIf="product.name===tabletName"> 
+  <div class="card">
+    <!-- code here to display the full details of the specific product as card -->
+    <div class="card-header">
+      <div class="size"><strong>{{product.name}}</strong></div> 
+        </div>
+
+     <div class="card-body">
+       <h5><b>Salt Composition: </b></h5>
+      <p>{{product.saltCompostion}}</p>
+
+      <h5><b>About: </b></h5>
+      <p>{{product.about}}</p>
+
+      <h5><b>Use: </b></h5>
+      <p>{{product.use}}</p>
+
+      <h5><b>SideEffects: </b></h5>
+      <p>{{product.sideEffects}}</p>
+     
+
+    </div>
+     <div class="card-footer">
+      <h5><b>Note: </b></h5>
+      <p>Consume as prescribed by physician</p>
+     
+
+    </div>
+  </div>
+ </div>
+</div> 

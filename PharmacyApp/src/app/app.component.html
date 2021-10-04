@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<nav class="navbar navbar-expand-md">
+  <!-- Brand -->
+  
+ <a class="navbar-brand" href="#">XYZPharma</a>
+
+
+  <!-- button on collapse -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav navStyle">
+      <!-- Add Router links here -->    
+   
+    <a class="navbar-brand" [routerLink]='["/home"]' routerLinkActive="active">Home</a>
+
+    <a class="navbar-brand" [routerLink]='["/products"]' routerLinkActive="active">Products</a>
+  
+    <a class="navbar-brand" [routerLink]='["/investors"]' routerLinkActive="active">Investors</a>
+
+    <a class="navbar-brand" [routerLink]='["/aboutus"]' routerLinkActive="active">About Us</a>
+
+  </ul>
+</div>
+
+    
+  
+</nav>
+
+
+<!--Add router outlet tag here -->
+<router-outlet></router-outlet>

@@ -1,0 +1,74 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+<div class="grid-container">
+    <div class="r1">
+        <div class="display-4">Quater Details</div>
+        <br>
+        <div class="qd">
+            Quarter Details available of:
+            <span class="badge">Q3 2018</span> &nbsp;
+            <span class="badge">Q4 2018</span> &nbsp;
+            <span class="badge">Q1 2019</span> &nbsp;
+            <span class="badge">Q2 2019</span> &nbsp;
+            <span class="badge">Q3 2019</span> &nbsp;
+            <span class="badge">Q4 2019</span> &nbsp;
+            <span class="badge">Q1 2020</span>
+        </div>
+
+        <!-- implement a reactive form that have two input fields and a button to collect the quater and financial year detail
+        <form>    </form> -->
+        <form [formGroup]="quaterForm">
+            <div class="div-cont">
+                <div class="form-group">
+                    <label>Quater: </label>
+                    <input type="text" class="form-control" formControlName="quater">
+                    <p *ngIf="quaterForm.controls.quater.errors" class="alert alert-danger">This Field is Required</p>
+
+                </div>
+                <div class="form-group">
+                    <label>Financial Year: </label>
+                    <input type="text" class="form-control" formControlName="fyear">
+                    <p *ngIf="quaterForm.controls.fyear.errors" class="alert alert-danger">This Field is Required</p>
+                    
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="btn" (click)="getQDetails()">Get Details</button>
+                </div>
+            </div>
+        </form>
+            
+    
+    <!-- implement a table to show the details of the quater selected if the quater detail is available -->
+
+    <table class="table table-bordered" *ngIf="!showError && quaterDetails!=null">
+             <thead class="thead-light">
+                 <tr>
+                     <th *ngFor="let h of tableHeader">
+                         {{h}}
+                     </th>
+                 </tr>
+             </thead>
+             <tbody>
+             <tr>
+               <td>{{quaterDetails?.quater}}</td>
+               <td>{{quaterDetails?.result?.sales}}</td>
+               <td>{{quaterDetails?.result?.otherIncome}}</td>
+               <td>{{quaterDetails?.result?.grossProfit}}</td>
+               <td>{{quaterDetails?.result?.depreciation}}</td>
+               <td>{{quaterDetails?.result?.Interest}}</td>
+               <td>{{quaterDetails?.result?.Tax}}</td>
+               <td>{{quaterDetails?.result?.netProfit}}</td>
+               
+
+             </tr>
+            </tbody>
+
+
+
+
+    </table>
+    </div>
+    <div *ngIf="showError" class="error">
+        <h4><span class="fas fa-cat"></span> {{errorMessage}}</h4>
+    </div>
+</div>
